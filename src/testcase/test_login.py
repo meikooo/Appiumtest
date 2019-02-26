@@ -1,5 +1,5 @@
 # coding:utf-8
-
+import configparser
 import time
 import unittest
 import warnings
@@ -29,14 +29,20 @@ logger = Logger(logger="login").getlog()
 
 class lanchApp(unittest.TestCase):
 
-    def test_login(self):
+    config = configparser.ConfigParser()
+    config.read("F:\\个人文档\\code\\Kumapocket\\config\\config.ini")
+    username = config.get("userName", "userName")
+    password = config.get("passWord", "PassWord")
+
+    def test_login(self,username = username,password = password):
         warnings.simplefilter("ignore", ResourceWarning)
+
         time.sleep(5)
         swipLeft(driver, n=3)
         driver.find_element_by_id('com.glodon.cp.view:id/startBtn').click()
         time.sleep(5)
-        driver.find_element_by_id('com.glodon.cp.view:id/login_username').send_keys(u"1@qq.com")
-        driver.find_element_by_id('com.glodon.cp.view:id/login_password').send_keys(u"A")
+        driver.find_element_by_id('com.glodon.cp.view:id/login_username').send_keys(username)
+        driver.find_element_by_id('com.glodon.cp.view:id/login_password').send_keys(password)
         time.sleep(5)
         driver.find_element_by_id("com.glodon.cp.view:id/login_login_btn").click()
         time.sleep(3)
