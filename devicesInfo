@@ -1,0 +1,47 @@
+#OPPO 7s
+desired_caps = {
+
+                'platformName': 'Android',
+
+                'deviceName': 'SWKNSOKVOVBE7P69',
+
+                'platformVersion': '4.4.4',
+
+                # apk包名
+
+                'appPackage': 'com.glodon.cp.view',
+
+                # apk的launcherActivity
+
+                'appActivity': 'com.glodon.cp.view.StartActivity',
+
+                'unicodeKeyboard':True,
+
+                'resetKeyboard':True
+                }
+
+driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
+
+
+#OPPO R9s
+
+desired_caps = {
+
+               'platformName': 'Android',
+
+               'deviceName': 'SWKNSOKVOVBE7P69',
+
+               'platformVersion': '4.4.4',
+
+                # apk包名
+
+                'appPackage': 'com.glodon.cp.view',
+
+                # apk的launcherActivity
+
+               'appActivity': 'com.glodon.cp.view.StartActivity',
+
+               'unicodeKeyboard': True,
+
+                'resetKeyboard': True
+}
